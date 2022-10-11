@@ -1,4 +1,7 @@
-const numbers = document.querySelector('.numbers')
+const numbersGrid = document.querySelectorAll('.numbers-grid')
+const numbers = document.querySelectorAll('.numbers')
+const dashboard = document.querySelector('.dashboard')
+const view = document.querySelector('.view')
 const operator = document.querySelector('.operators')
 
 const add = function (x, y) {
@@ -38,10 +41,11 @@ const factorial = function (x) {
 };
 
 
-const updateDashboard = function (number) {
-// if clicked number btn = show on inner str of html
-
-// if an operator is triggered, update to show calculation.
 
 
-}
+numbers.forEach(number => 
+  number.addEventListener("click", () => {
+
+    // show clicked number
+    view.textContent = number.textContent
+  }))
