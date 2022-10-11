@@ -1,3 +1,6 @@
+const numbers = document.querySelector('.numbers')
+const operator = document.querySelector('.operators')
+
 const add = function (x, y) {
   return x + y;
 };
@@ -33,3 +36,12 @@ const factorial = function (x) {
   }
   return sum;
 };
+
+
+const updateDashboard = function (number) {
+// if clicked number btn = show on inner str of html
+
+// if an operator is triggered, update to show calculation.
+
+
+}
