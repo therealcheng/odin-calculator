@@ -47,12 +47,12 @@ const factorial = function (x) {
 
 
 const clearView = function () {
-  view.textContent = ''
+  view.textContent = '0'
 }
 
 operators.forEach(op => op.addEventListener("click", () => {
   aboveView.textContent = view.textContent + '' + op.textContent;
-  clearView();
+  // clearView();
 }))
 
 
