@@ -1,9 +1,13 @@
 const numbersGrid = document.querySelectorAll('.numbers-grid')
 const numbers = document.querySelectorAll('.numbers')
+const operators = document.querySelectorAll('.operator')
 const dashboard = document.querySelector('.dashboard')
+const aboveView = document.querySelector('.above-view')
 const view = document.querySelector('.view')
-const operator = document.querySelector('.operators')
+const operator = document.querySelector('.operator')
 const clear = document.querySelector('.clear')
+
+let number = [];
 
 const add = function (x, y) {
   return x + y;
@@ -46,12 +50,20 @@ const clearView = function () {
   view.textContent = ''
 }
 
+operators.forEach(op => op.addEventListener("click", () => {
+  aboveView.textContent = view.textContent + '' + op.textContent;
+  clearView();
+}))
+
 
 numbers.forEach(number => 
   number.addEventListener("click", () => {
 
-    // show clicked number
+    // show clicked number on view
     view.textContent += number.textContent
+
+    // if any operator is clicked, show number and operator above view
   }))
   clear.addEventListener('click', clearView)
+  
 
