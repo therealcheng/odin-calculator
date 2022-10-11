@@ -1,11 +1,12 @@
-const numbersGrid = document.querySelectorAll('.numbers-grid')
-const numbers = document.querySelectorAll('.numbers')
-const operators = document.querySelectorAll('.operator')
-const dashboard = document.querySelector('.dashboard')
-const aboveView = document.querySelector('.above-view')
-const view = document.querySelector('.view')
-const operator = document.querySelector('.operator')
-const clear = document.querySelector('.clear')
+const numbersGrid = document.querySelectorAll('.numbers-grid');
+const numbers = document.querySelectorAll('.numbers');
+const operators = document.querySelectorAll('.operator');
+const dashboard = document.querySelector('.dashboard');
+const aboveView = document.querySelector('.above-view');
+const view = document.querySelector('.view');
+const operator = document.querySelector('.operator');
+const clear = document.querySelector('.clear');
+const deleteBtn = document.querySelector('.delete');
 
 let number = [];
 
@@ -45,25 +46,33 @@ const factorial = function (x) {
   return sum;
 };
 
-
 const clearView = function () {
-  view.textContent = '0'
-}
+  view.textContent = '0';
+};
 
-operators.forEach(op => op.addEventListener("click", () => {
-  aboveView.textContent = view.textContent + '' + op.textContent;
-  // clearView();
-}))
+const deleteView = function () {
+  let viewContent = view.textContent.split('').slice(0, -1).join('');
 
+  // if 0, return - guard clause.
 
-numbers.forEach(number => 
-  number.addEventListener("click", () => {
+  // if array.length is 1, text content is 0
+  view.textContent = viewContent;
+};
 
+operators.forEach((op) =>
+  op.addEventListener('click', () => {
+    aboveView.textContent = view.textContent + '' + op.textContent;
+    // clearView();
+  })
+);
+
+numbers.forEach((number) =>
+  number.addEventListener('click', () => {
     // show clicked number on view
-    view.textContent += number.textContent
+    view.textContent += number.textContent;
 
     // if any operator is clicked, show number and operator above view
-  }))
-  clear.addEventListener('click', clearView)
-  
-
+  })
+);
+clear.addEventListener('click', clearView);
+deleteBtn.addEventListener('click', deleteView);
