@@ -51,11 +51,12 @@ const clearView = function () {
 };
 
 const deleteView = function () {
+  // if 0, return - guard clause.
+  if (view.textContent === '0') return;
+  // if array.length is 1, text content is 0
+  if (view.textContent.length === 1) view.textContent = '0';
   let viewContent = view.textContent.split('').slice(0, -1).join('');
 
-  // if 0, return - guard clause.
-
-  // if array.length is 1, text content is 0
   view.textContent = viewContent;
 };
 
