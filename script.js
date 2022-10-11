@@ -3,6 +3,7 @@ const numbers = document.querySelectorAll('.numbers')
 const dashboard = document.querySelector('.dashboard')
 const view = document.querySelector('.view')
 const operator = document.querySelector('.operators')
+const clear = document.querySelector('.clear')
 
 const add = function (x, y) {
   return x + y;
@@ -41,11 +42,16 @@ const factorial = function (x) {
 };
 
 
+const clearView = function () {
+  view.textContent = ''
+}
 
 
 numbers.forEach(number => 
   number.addEventListener("click", () => {
 
     // show clicked number
-    view.textContent = number.textContent
+    view.textContent += number.textContent
   }))
+  clear.addEventListener('click', clearView)
+
