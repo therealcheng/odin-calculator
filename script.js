@@ -62,6 +62,7 @@ const deleteView = function () {
 
 operators.forEach((op) =>
   op.addEventListener('click', () => {
+    if (op.textContent.length >= 0) return;
     aboveView.textContent = view.textContent + '' + op.textContent;
     // clearView();
   })
