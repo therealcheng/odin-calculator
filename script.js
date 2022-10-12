@@ -8,7 +8,7 @@ const operator = document.querySelector('.operator');
 const clear = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 
-let number = [];
+let numbersArray = [];
 
 const add = function (x, y) {
   return x + y;
@@ -47,8 +47,8 @@ const factorial = function (x) {
 };
 
 const clearView = function () {
-  aboveView.textContent = '';
   view.textContent = '0';
+  let numbersArray = [];
 };
 
 const deleteView = function () {
@@ -65,12 +65,15 @@ operators.forEach((op) =>
   op.addEventListener('click', () => {
     // if (op.textContent.length <= 1) return;
     aboveView.textContent = view.textContent + '' + op.textContent;
-    // clearView();
+    numbersArray.push(view.textContent);
+    clearView();
+    console.log(numbersArray);
   })
 );
 
 numbers.forEach((number) =>
   number.addEventListener('click', () => {
+    if (view.textContent === '0') view.textContent = '';
     // show clicked number on view
     view.textContent += number.textContent;
 
