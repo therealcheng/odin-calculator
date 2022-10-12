@@ -9,6 +9,9 @@ const clear = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 
 let numbersArray = [];
+let number1;
+let number2;
+let answer;
 
 const add = function (x, y) {
   return x + y;
@@ -21,7 +24,7 @@ const subtract = function (x, y) {
 const sum = function (array) {
   let sum = 0;
   for (let i = 0; i < array.length; i++) {
-    sum += array[i];
+    sum += Number(array[i]);
   }
   return sum;
 };
@@ -62,11 +65,19 @@ const deleteView = function () {
 
 operators.forEach((op) =>
   op.addEventListener('click', () => {
-    // if (op.textContent.length <= 1) return;
     aboveView.textContent = view.textContent + '' + op.textContent;
     numbersArray.push(view.textContent);
     clearView();
     console.log(numbersArray);
+    // if an operator is clicked (add, subract, divide, minus)
+    if (op.textContent === '+') {
+      answer = sum(numbersArray);
+      console.log(answer);
+    }
+
+    if (op.textContent === '=') {
+      view.textContent = answer;
+    }
   })
 );
 
