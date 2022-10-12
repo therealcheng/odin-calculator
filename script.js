@@ -47,13 +47,14 @@ const factorial = function (x) {
 };
 
 const clearView = function () {
+  aboveView.textContent = '';
   view.textContent = '0';
 };
 
 const deleteView = function () {
   // if 0, return - guard clause.
   if (view.textContent === '0') return;
-  // if array.length is 1, text content is 0
+  // if array.length is exactly 1, text content is 0
   if (view.textContent.length === 1) view.textContent = '0';
   let viewContent = view.textContent.split('').slice(0, -1).join('');
 
@@ -62,7 +63,7 @@ const deleteView = function () {
 
 operators.forEach((op) =>
   op.addEventListener('click', () => {
-    if (op.textContent.length >= 0) return;
+    // if (op.textContent.length <= 1) return;
     aboveView.textContent = view.textContent + '' + op.textContent;
     // clearView();
   })
