@@ -8,49 +8,23 @@ const operator = document.querySelector('.operator');
 const clear = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 
-let currentOperator;
+let currentOperator; // + - % x
 let number1;
 let number2;
 let answer;
 
 const add = function (x, y) {
-  return x + y;
-};
-
-const subtract = function (x, y) {
-  return x - y;
-};
-
-const sum = function (array) {
-  let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    sum += Number(array[i]);
-  }
-  return sum;
-};
-
-const multiply = function (array) {
-  let sum = 1;
-  for (let i = 0; i < array.length; i++) {
-    sum *= array[i];
-  }
-  return sum;
-};
-
-const power = function (x, y) {
-  return x ** y;
-};
-
-const factorial = function (x) {
-  let sum = 1;
-  for (let i = 0; i < x; i++) {
-    if (i !== 0) sum *= i + 1;
-  }
-  return sum;
+  return Number(x) + Number(y);
 };
 
 const clearView = function () {
   view.textContent = '0';
+  currentOperator = 0;
+  number1 = 0;
+  number2 = 0;
+  answer = 0;
+  console.clear();
+  console.log('cleared');
 };
 
 const deleteView = function () {
@@ -65,24 +39,32 @@ const deleteView = function () {
 
 operators.forEach((op) =>
   op.addEventListener('click', () => {
-    aboveView.textContent = view.textContent + '' + op.textContent;
-    clearView();
+    // * if an operator is clicked (add, subtract, divide, minus)
 
-    // if an operator is clicked (add, subract, divide, minus)
     if (op.textContent === '+') {
+      number1 = view.textContent;
+      console.log(number1);
     }
 
     if (op.textContent === '=') {
-      view.textContent = answer;
+      currentOperator = '=';
+      number2 = view.textContent;
+      aboveView.textContent = '';
+      view.textContent = add(number1, number2);
       currentOperator = '';
-      console.log(op);
+      return;
     }
+
+    aboveView.textContent = view.textContent + '' + op.textContent;
+    view.textContent = '0';
   })
 );
 
 numbers.forEach((number) =>
   number.addEventListener('click', () => {
     if (view.textContent === '0') view.textContent = '';
+    if (currentOperator === '=' || currentOperator === '0')
+      view.textContent = '';
     // show clicked number on view
     view.textContent += number.textContent;
 
