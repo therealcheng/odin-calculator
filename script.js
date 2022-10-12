@@ -47,8 +47,8 @@ operators.forEach((op) =>
   op.addEventListener('click', () => {
     if (op.textContent === '+') {
       if (aboveView.textContent !== '') {
-        number2 = number1;
         number1 = view.textContent;
+        number2 = aboveView.textContent.slice(0, -1);
         console.log('contains', number1, number2);
         view.textContent = add(number1, number2);
       } else {
