@@ -11,7 +11,7 @@ const deleteBtn = document.querySelector('.delete');
 let currentOperator; // + - % x
 let number1;
 let number2;
-let previousNumber;
+let number3;
 let answer;
 
 // * Functions
@@ -41,7 +41,7 @@ const deleteView = function () {
   view.textContent = viewContent;
 };
 
-// * Event listeners  
+// * Event listeners
 
 operators.forEach((op) =>
   op.addEventListener('click', () => {
