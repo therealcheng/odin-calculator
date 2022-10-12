@@ -48,7 +48,6 @@ const factorial = function (x) {
 
 const clearView = function () {
   view.textContent = '0';
-  let numbersArray = [];
 };
 
 const deleteView = function () {
@@ -80,5 +79,9 @@ numbers.forEach((number) =>
     // if any operator is clicked, show number and operator above view
   })
 );
-clear.addEventListener('click', clearView);
+clear.addEventListener('click', () => {
+  clearView();
+  numbersArray.length = 0;
+  console.log(numbersArray);
+});
 deleteBtn.addEventListener('click', deleteView);
