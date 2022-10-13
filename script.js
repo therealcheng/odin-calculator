@@ -49,7 +49,7 @@ operators.forEach((op) =>
       if (aboveView.textContent !== '') {
         number1 = view.textContent;
         number2 = aboveView.textContent.slice(0, -1);
-        console.log('contains', number1, number2);
+        console.log('OP contains', number1, number2);
         view.textContent = add(number1, number2);
       } else {
         currentOperator = '+';
@@ -59,11 +59,21 @@ operators.forEach((op) =>
     }
 
     if (op.textContent === '=') {
-      aboveView.textContent = ` ${number1} ${currentOperator} ${view.textContent} =`;
-      currentOperator = '=';
+      currentOperator = 'currentOperator';
+      number3 = aboveView.textContent.slice(0, -1);
       number2 = view.textContent;
-      view.textContent = add(number1, number2);
-      currentOperator = '';
+      console.log('= CONTAINS', number2, number3);
+
+      aboveView.textContent = ` ${number2} ${currentOperator} ${view.textContent} =`;
+
+      view.textContent = add(number2, number3);
+      return;
+    }
+
+    if (currentOperator == 'finished') {
+      console.log('working');
+      view.textContent = '';
+      aboveView = '';
       return;
     }
 
@@ -75,8 +85,7 @@ operators.forEach((op) =>
 numbers.forEach((number) =>
   number.addEventListener('click', () => {
     if (view.textContent === '0') view.textContent = '';
-    if (currentOperator === '=' || currentOperator === '0')
-      view.textContent = '';
+
     // show clicked number on view
     view.textContent += number.textContent;
 
