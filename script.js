@@ -1,12 +1,17 @@
 const numbersGrid = document.querySelectorAll('.numbers-grid');
 const numbers = document.querySelectorAll('.numbers');
-const operators = document.querySelectorAll('.operator');
 const dashboard = document.querySelector('.dashboard');
 const aboveView = document.querySelector('.above-view');
 const view = document.querySelector('.view');
 const operator = document.querySelector('.operator');
 const clear = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
+
+// Operators DOM
+const plusDOM = document.querySelector('.plus');
+const subtractDOM = document.querySelector('.subtract');
+const divideDOM = document.querySelector('.divide');
+const multiplyDOM = document.querySelector('.multiply');
 
 let currentOperator; // + - % x =
 let number1;
