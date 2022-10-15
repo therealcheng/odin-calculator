@@ -24,17 +24,14 @@ const add = function (x, y) {
 };
 
 const subtract = function (x, y) {
-  currentOperator = '-';
   return Number(x) - Number(y);
 };
 
 const multiply = function (x, y) {
-  currentOperator = 'x';
   return Number(x) * Number(y);
 };
 
 const divide = function (x, y) {
-  currentOperator = '%';
   return Number(x) / Number(y);
 };
 
@@ -47,6 +44,36 @@ const plusBtn = function () {
 
   console.log(
     `Plus button clicked! Number: ${number1}. Current operator is: ${currentOperator}`
+  );
+};
+
+const minusBtn = function () {
+  number1 = view.innerHTML;
+  currentOperator = '-';
+  clearView();
+
+  console.log(
+    `Minus button clicked! Number: ${number1}. Current operator is: ${currentOperator}`
+  );
+};
+
+const divideBtn = function () {
+  number1 = view.innerHTML;
+  currentOperator = '%';
+  clearView();
+
+  console.log(
+    `Divide button clicked! Number: ${number1}. Current operator is: ${currentOperator}`
+  );
+};
+
+const multiplyBtn = function () {
+  number1 = view.innerHTML;
+  currentOperator = 'x';
+  clearView();
+
+  console.log(
+    `Multiply button clicked! Number: ${number1}. Current operator is: ${currentOperator}`
   );
 };
 
