@@ -3,8 +3,7 @@ const numbersBtn = document.querySelectorAll('.numbers');
 const dashboard = document.querySelector('.dashboard');
 const aboveView = document.querySelector('.above-view');
 const view = document.querySelector('.view');
-const operator = document.querySelector('.operator');
-const clear = document.querySelector('.clear');
+const clearBtn = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
 
 // Operators DOM
@@ -42,19 +41,23 @@ const divide = function (x, y) {
 
 // * View Functions
 
-const clearView = function () {
-  aboveView.textContent = '';
-  currentOperator = 0;
+const reset = function () {
+  clearView();
   number1 = null;
   number2 = null;
   answer = null;
   console.clear();
-  console.log('cleared view content and reset parameters');
+  console.log('cleared view content and parameters reset');
 };
 
 const deleteNumber = function () {
   const slice = view.innerHTML.slice(0, -1);
   view.innerHTML = slice;
+};
+
+const clearView = function () {
+  view.innerHTML = '';
+  currentOperator = '';
 };
 
 const showNumber = function (number) {
@@ -66,3 +69,4 @@ const showNumber = function (number) {
 
 numbersBtn.forEach((number) => number.addEventListener('click', showNumber));
 deleteBtn.addEventListener('click', deleteNumber);
+clearBtn.addEventListener('click', reset);
