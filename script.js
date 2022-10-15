@@ -52,3 +52,10 @@ const clearView = function () {
   console.clear();
   console.log('cleared');
 };
+
+const showNumber = function (number) {
+  // console.log(number);
+  view.innerHTML += number.target.innerHTML;
+};
+
+numbers.forEach((number) => number.addEventListener('click', showNumber));
