@@ -13,7 +13,7 @@ let number1;
 let number2;
 let number3;
 
-// * Functions
+// * Calculator Functions
 
 const add = function (x, y) {
   currentOperator = '+';
@@ -34,6 +34,8 @@ const divide = function (x, y) {
   currentOperator = '%';
   return Number(x) / Number(y);
 };
+
+// * Views
 
 const clearView = function () {
   aboveView.textContent = '';
