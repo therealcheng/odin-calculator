@@ -90,12 +90,16 @@ const equalsBtn = function () {
   );
   if (currentOperator === '+') {
     view.innerHTML = `${add(number1, number2)}`;
+    aboveView.innerHTML = `${number1} + ${number2} = `;
   } else if (currentOperator === '-') {
     view.innerHTML = `${subtract(number1, number2)}`;
+    aboveView.innerHTML = `${number1} - ${number2} = `;
   } else if (currentOperator === '%') {
     view.innerHTML = `${divide(number1, number2)}`;
+    aboveView.innerHTML = `${number1} % ${number2} = `;
   } else if (currentOperator === 'x') {
     view.innerHTML = `${multiply(number1, number2)}`;
+    aboveView.innerHTML = `${number1} x ${number2} = `;
   }
 };
 
@@ -107,6 +111,7 @@ const reset = function () {
   number2 = null;
   answer = null;
   currentOperator = '';
+  aboveView.innerHTML = '';
   console.clear();
   console.log('cleared view content and parameters reset');
 };

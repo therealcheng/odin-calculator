@@ -1,0 +1,8 @@
+:root {
+  background-color: #1f2132;
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+}
