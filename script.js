@@ -20,7 +20,6 @@ let number3;
 // * Calculator Functions
 
 const add = function (x, y) {
-  currentOperator = '+';
   return Number(x) + Number(y);
 };
 
@@ -39,6 +38,18 @@ const divide = function (x, y) {
   return Number(x) / Number(y);
 };
 
+// * Operator Functions
+
+const plusBtn = function () {
+  number1 = view.innerHTML;
+  currentOperator = '+';
+  clearView();
+
+  console.log(
+    `Plus button clicked! Number: ${number1}. Current operator is: ${currentOperator}`
+  );
+};
+
 // * View Functions
 
 const reset = function () {
@@ -46,6 +57,7 @@ const reset = function () {
   number1 = null;
   number2 = null;
   answer = null;
+  currentOperator = '';
   console.clear();
   console.log('cleared view content and parameters reset');
 };
@@ -57,7 +69,6 @@ const deleteNumber = function () {
 
 const clearView = function () {
   view.innerHTML = '';
-  currentOperator = '';
 };
 
 const showNumber = function (number) {
@@ -70,3 +81,4 @@ const showNumber = function (number) {
 numbersBtn.forEach((number) => number.addEventListener('click', showNumber));
 deleteBtn.addEventListener('click', deleteNumber);
 clearBtn.addEventListener('click', reset);
+plusDOM.addEventListener('click', plusBtn);
