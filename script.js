@@ -59,7 +59,6 @@ operators.forEach((op) =>
     }
 
     if (op.textContent === '=') {
-      currentOperator = 'currentOperator';
       number3 = aboveView.textContent.slice(0, -1);
       number2 = view.textContent;
       console.log('= CONTAINS', number2, number3);
