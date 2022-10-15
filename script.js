@@ -19,6 +19,18 @@ const add = function (x, y) {
   return Number(x) + Number(y);
 };
 
+const subtract = function (x, y) {
+  return Number(x) - Number(y);
+};
+
+const multiply = function (x, y) {
+  return Number(x) * Number(y);
+};
+
+const divide = function (x, y) {
+  return Number(x) / Number(y);
+};
+
 const clearView = function () {
   aboveView.textContent = '';
   view.textContent = '0';
