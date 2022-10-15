@@ -16,18 +16,22 @@ let number3;
 // * Functions
 
 const add = function (x, y) {
+  currentOperator = '+';
   return Number(x) + Number(y);
 };
 
 const subtract = function (x, y) {
+  currentOperator = '-';
   return Number(x) - Number(y);
 };
 
 const multiply = function (x, y) {
+  currentOperator = 'x';
   return Number(x) * Number(y);
 };
 
 const divide = function (x, y) {
+  currentOperator = '%';
   return Number(x) / Number(y);
 };
 
