@@ -1,5 +1,5 @@
 const numbersGrid = document.querySelectorAll('.numbers-grid');
-const numbers = document.querySelectorAll('.numbers');
+const numbersBtn = document.querySelectorAll('.numbers');
 const dashboard = document.querySelector('.dashboard');
 const aboveView = document.querySelector('.above-view');
 const view = document.querySelector('.view');
@@ -40,17 +40,21 @@ const divide = function (x, y) {
   return Number(x) / Number(y);
 };
 
-// * Views
+// * View Functions
 
 const clearView = function () {
   aboveView.textContent = '';
-  view.textContent = '0';
   currentOperator = 0;
   number1 = null;
   number2 = null;
   answer = null;
   console.clear();
-  console.log('cleared');
+  console.log('cleared view content and reset parameters');
+};
+
+const deleteNumber = function () {
+  const slice = view.innerHTML.slice(0, -1);
+  view.innerHTML = slice;
 };
 
 const showNumber = function (number) {
@@ -58,4 +62,7 @@ const showNumber = function (number) {
   view.innerHTML += number.target.innerHTML;
 };
 
-numbers.forEach((number) => number.addEventListener('click', showNumber));
+// * Event listeners
+
+numbersBtn.forEach((number) => number.addEventListener('click', showNumber));
+deleteBtn.addEventListener('click', deleteNumber);
