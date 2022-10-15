@@ -13,7 +13,7 @@ const divideDOM = document.querySelector('.divide');
 const multiplyDOM = document.querySelector('.multiply');
 const equals = document.querySelector('.equals');
 
-let currentOperator; // + - % x =
+let currentOperator = ''; // + - % x =
 let number1;
 let number2;
 let number3;
@@ -39,6 +39,7 @@ const multiply = function (x, y) {
 // * Operator Button Functions
 
 const plusBtn = function () {
+  if (view.innerHTML === '') return;
   number1 = view.innerHTML;
   currentOperator = '+';
   clearView();
@@ -49,6 +50,7 @@ const plusBtn = function () {
 };
 
 const minusBtn = function () {
+  if (view.innerHTML === '') return;
   number1 = view.innerHTML;
   currentOperator = '-';
   clearView();
@@ -59,6 +61,7 @@ const minusBtn = function () {
 };
 
 const divideBtn = function () {
+  if (view.innerHTML === '') return;
   number1 = view.innerHTML;
   currentOperator = '%';
   clearView();
@@ -69,6 +72,7 @@ const divideBtn = function () {
 };
 
 const multiplyBtn = function () {
+  if (view.innerHTML === '') return;
   number1 = view.innerHTML;
   currentOperator = 'x';
   clearView();
@@ -79,6 +83,7 @@ const multiplyBtn = function () {
 };
 
 const equalsBtn = function () {
+  if (currentOperator === '') return;
   number2 = view.innerHTML;
   console.log(
     `Equals button clicked! Number1: ${number1}, Number2: ${number2}. Current operator is: ${currentOperator}`
