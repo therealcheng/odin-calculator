@@ -28,12 +28,12 @@ const subtract = function (x, y) {
   return Number(x) - Number(y);
 };
 
-const multiply = function (x, y) {
-  return Number(x) * Number(y);
-};
-
 const divide = function (x, y) {
   return Number(x) / Number(y);
+};
+
+const multiply = function (x, y) {
+  return Number(x) * Number(y);
 };
 
 // * Operator Button Functions
@@ -85,6 +85,12 @@ const equalsBtn = function () {
   );
   if (currentOperator === '+') {
     view.innerHTML = `${add(number1, number2)}`;
+  } else if (currentOperator === '-') {
+    view.innerHTML = `${subtract(number1, number2)}`;
+  } else if (currentOperator === '%') {
+    view.innerHTML = `${divide(number1, number2)}`;
+  } else if (currentOperator === 'x') {
+    view.innerHTML = `${multiply(number1, number2)}`;
   }
 };
 
