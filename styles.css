@@ -1,8 +1,61 @@
 :root {
-  background-color: #1f2132;
+  background-color: #f1f0ee;
+}
+
+/* .calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.view {
+  display: flex;
+  justify-content: center;
+  background-color: #666563;
+  width: 90px;
+  height: 40px;
 }
 
 .dashboard {
+  justify-content: center;
+  background-color: #666563;
+  outline: dashed 1px black;
+}
+
+.above-view {
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-name {
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.operators-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-delete {
+  display: flex;
+  justify-content: center;
+}
+
+.numbers {
+  background-color: #666563;
+  color: grey;
+  width: 30px;
+  height: 30px;
 }
